@@ -1,5 +1,5 @@
 excludes = --exclude ".git/" --exclude ".DS_Store" --exclude "Makefile" \
-    --exclude "README.md"
+    --exclude "README.md" --exclude ".gitmodules"
 
 all: deploy
 
