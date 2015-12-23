@@ -7,3 +7,6 @@
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule ".config/awesome/themes/awesome-solarized"]
+	path = .config/awesome/themes/awesome-solarized
+	url = https://github.com/cycojesus/awesome-solarized.git
