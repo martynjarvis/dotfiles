@@ -1,7 +1,7 @@
 excludes = --exclude ".git/" --exclude ".DS_Store" --exclude "Makefile" \
     --exclude "README.md" --exclude ".gitmodules" --exclude "*.git"
 
-all: update deploy
+all: update install
 
 update:
 	git pull origin master;
@@ -10,5 +10,5 @@ update:
 check:
 	rsync $(excludes) -avh --no-perms --dry-run . ~;
 
-deploy:
+install:
 	rsync $(excludes) -avh --no-perms . ~;
