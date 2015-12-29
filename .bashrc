@@ -17,8 +17,13 @@ export HISTCONTROL=ignoredups
 
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 export GIT_PS1_SHOWDIRTYSTATE=1
-source /usr/share/git/completion/git-prompt.sh
-export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+
+if [[ -f /usr/share/git/completion/git-prompt.sh ]]; then
+    source /usr/share/git/completion/git-prompt.sh
+    export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+else
+    export PS1="[\u@\h \W]\\$ "
+fi
 
 # Enable shell glob pattern "**" to match multiple subdirectories
 shopt -s globstar
