@@ -39,8 +39,9 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['python','pylint', 'pep8', 'pep257']
 
 " Enable spellchecking for Markdown and gitcommit messages
 autocmd BufRead,BufNewFile *.md setlocal spell
@@ -112,6 +113,9 @@ nmap <silent> ,df :w !diff % - <cr>
 " trim whitespace (mnemonic for the key sequence is
 " 't'rim 'w'hitespace)
 nmap <silent> ,tw :%s/\s\+$// <cr>
+
+" run syntastic on current buffer (mnemonic for the key sequence is 'p'y'l'int)
+nmap <silent> ,pl :SyntasticCheck <cr>
 
 " ctrl-p buffermode
 nmap <C-B> :CtrlPBuffer<cr>

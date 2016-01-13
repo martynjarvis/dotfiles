@@ -1,4 +1,4 @@
-##-------------------
+#-------------------
 ## Enviroment
 ##-------------------
 
@@ -7,15 +7,14 @@
 
 export EDITOR=/usr/bin/vim
 
-export PYTHONPATH=~/Projects/:$PYTHONPATH
-export PATH=$PATH:~/bin/
+export PYTHONPATH=~/Projects/:~/uitests/stb-tester:~/uitests/library:$PYTHONPATH
+export PATH=$PATH:~/bin/:~/uitests/tools:~/.local/bin
 
 export HISTSIZE=1000000000
 export HISTTIMEFORMAT="%Y/%m/%d %H:%M:%S  " # Add a timestamp to each history entry.
 export HISTIGNORE=?:??  # Don't remember trivial 1- and 2-letter commands.
 export HISTCONTROL=ignoredups
 
-export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 export GIT_PS1_SHOWDIRTYSTATE=1
 
 if [[ -f /usr/share/git/completion/git-prompt.sh ]]; then
@@ -25,6 +24,8 @@ else
     export PS1="[\u@\h \W]\\$ "
 fi
 
+# Command completion
+source /usr/share/bash-completion/bash_completion
 # Enable shell glob pattern "**" to match multiple subdirectories
 shopt -s globstar
 

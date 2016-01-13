@@ -38,12 +38,11 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
--- beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 beautiful.init( awful.util.getdir("config") .. "/themes/awesome-solarized/dark/theme.lua" )
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
-editor = os.getenv("EDITOR") or "nano"
+editor = os.getenv("EDITOR") or "vi"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -366,6 +365,14 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "gimp" },
       properties = { floating = true } },
+    -- stbt tv
+    { rule = { name = "gst-launch-1.0" },
+      properties = { floating = true,
+                     tag = tags[1][1] } },
+    -- stbt run
+    { rule = { name = "python" },
+      properties = { floating = true,
+                     tag = tags[1][1] } },
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },
