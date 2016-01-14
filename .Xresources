@@ -70,7 +70,7 @@
 *color15:                 S_base3
 
 ! Select the fonts to be used. This is a comma separated list of font names that are checked in order when trying to find glyphs for
-URxvt*font: xft:Ubuntu Mono
+urxvt*font: xft:inconsolata:pixelsize=14:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=14:antialias=true,hinting=true
 
 ! True: enable the scrollbar [default]; option -sb. False: disable the scrollbar; option +sb.
 URxvt*scrollBar: False
