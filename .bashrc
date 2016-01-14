@@ -20,6 +20,9 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 if [[ -f /usr/share/git/completion/git-prompt.sh ]]; then
     source /usr/share/git/completion/git-prompt.sh
     export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+elif [[ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]]; then
+    source /usr/share/git-core/contrib/completion/git-prompt.sh
+    export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 else
     export PS1="[\u@\h \W]\\$ "
 fi
