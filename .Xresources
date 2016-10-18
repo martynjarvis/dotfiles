@@ -70,13 +70,14 @@
 *color15:                 S_base3
 
 ! Select the fonts to be used. This is a comma separated list of font names that are checked in order when trying to find glyphs for
-urxvt*font: xft:inconsolata:pixelsize=14:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=14:antialias=true,hinting=true
+XTerm*faceName: DejaVu Sans Mono
+XTerm*faceSize: 11
 
 ! True: enable the scrollbar [default]; option -sb. False: disable the scrollbar; option +sb.
-URxvt*scrollBar: False
+*scrollBar: False
 
 ! True: blink the cursor. False: do not blink the cursor [default]; option -bc.
-URxvt*cursorBlink: true
+*cursorBlink: true
 
 ! True: Make the cursor underlined. False: Make the cursor a box [default]; option -uc.
-URxvt*cursorUnderline: false
+*cursorUnderline: false
