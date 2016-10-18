@@ -5,7 +5,7 @@ all: update install
 
 update:
 	git pull origin master;
-	git submodule update;
+	git submodule update --init --recursive --remote;
 
 check:
 	rsync $(excludes) -avh --no-perms --dry-run . ~;
