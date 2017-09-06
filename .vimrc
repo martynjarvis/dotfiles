@@ -43,6 +43,9 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['python','pylint', 'pep8', 'pep257']
 
+" Ctrl p settings
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
 " Enable spellchecking for Markdown and gitcommit messages
 autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd FileType gitcommit setlocal spell
