@@ -7,7 +7,7 @@
 
 export EDITOR=/usr/bin/vim
 
-export PYTHONPATH=~/Projects/:~/uitests/stb-tester:~/uitests/library:$PYTHONPATH
+export PYTHONPATH=$PYTHONPATH:~/uitests/stb-tester:~/uitests/library
 export PATH=$PATH:~/bin/:~/uitests/tools:~/.local/bin
 
 export HISTSIZE=1000000000
@@ -58,3 +58,10 @@ elif [[ "$OSTYPE" == "cygwin" ]]; then
     # Cygwin and git bash for Windows.
     alias ls='ls -h --color'
 fi
+
+
+##-------------------
+## NVM
+##-------------------
+export NVM_DIR=~/.nvm
+source ~/.nvm/nvm.sh
