@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+#/Usage: n [OPTIONS] COMMAND [ARGS]...
+#/
+#/ Commands:
+#/   edit         open a note in $EDITOR
+#/   ls           list all notes
+#/   grep         grep through all notes
+#/   help         display this message
+#/
+#/  Notes are assumed to exist in ~/Notes. The dir will be created if it does
+#/  not exist.
+NOTEDIR="$HOME/Notes"
+
+set -e
+
+main() {
+  local mode=$1
+  case $mode in
+    e*)
+      mkdir -p "$NOTEDIR"
+      $EDITOR "$NOTEDIR/$2"
+      ;;
+    l*)
+      ls -1 $NOTEDIR
+      ;;
+    g*)
+      grep -R $2 $NOTEDIR
+      ;;
+    d*)
+      rm -i "$NOTEDIR/$2"
+      ;;
+    h*)
+      print_help
+      ;;
+    *)
+      echo -e "Unknown command: $1\n"
+      print_help
+      ;;
+  esac
+}
+
+print_help() {
+    grep '^#/' $0 | cut -c 3-
+}
+
+main "$@"
