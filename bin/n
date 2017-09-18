@@ -2,6 +2,7 @@
 #/Usage: n [OPTIONS] COMMAND [ARGS]...
 #/
 #/ Commands:
+#/   cat          print a note to terminal
 #/   edit         open a note in $EDITOR
 #/   ls           list all notes
 #/   grep         grep through all notes
@@ -16,6 +17,9 @@ set -e
 main() {
   local mode=$1
   case $mode in
+    c*)
+      cat "$NOTEDIR/$2"
+      ;;
     e*)
       mkdir -p "$NOTEDIR"
       $EDITOR "$NOTEDIR/$2"
