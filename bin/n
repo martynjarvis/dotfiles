@@ -6,6 +6,7 @@
 #/   edit         open a note in $EDITOR
 #/   ls           list all notes
 #/   grep         grep through all notes
+#/   rm           delete a note
 #/   help         display this message
 #/
 #/  Notes are assumed to exist in ~/Notes. The dir will be created if it does
@@ -30,7 +31,7 @@ main() {
     g*)
       grep -R $2 $NOTEDIR
       ;;
-    d*)
+    rm)
       rm -i "$NOTEDIR/$2"
       ;;
     h*)
